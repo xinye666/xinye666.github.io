@@ -3,14 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>叶新的博客</title>
+  <title>注解PostConstruct和PreDestory | 叶新的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="叶新的博客">
-<meta property="og:url" content="http://yexin.info/index.html">
+  <meta name="description" content="今天偶然发现有一个框架中使用到了@PostConstruct，发现以前从未使用过，去查阅了一些资料发现配套使用的还有一个@PreDestory，从Java EE5规范开始他们都会参与到Servlet生命周期中去～，想想偶尔会在面试中问别人Servlet生命周期，发现自己还有不清楚的地方。
+定义@PostConstruct被@PostConstruct修饰的方法会在服务器加载Servlet的时候运行">
+<meta property="og:type" content="article">
+<meta property="og:title" content="注解PostConstruct和PreDestory">
+<meta property="og:url" content="http://yexin.info/2017/01/19/注解PostConstruct和PreDestroy/index.html">
 <meta property="og:site_name" content="叶新的博客">
+<meta property="og:description" content="今天偶然发现有一个框架中使用到了@PostConstruct，发现以前从未使用过，去查阅了一些资料发现配套使用的还有一个@PreDestory，从Java EE5规范开始他们都会参与到Servlet生命周期中去～，想想偶尔会在面试中问别人Servlet生命周期，发现自己还有不清楚的地方。
+定义@PostConstruct被@PostConstruct修饰的方法会在服务器加载Servlet的时候运行">
+<meta property="og:updated_time" content="2017-01-19T10:26:44.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="叶新的博客">
+<meta name="twitter:title" content="注解PostConstruct和PreDestory">
+<meta name="twitter:description" content="今天偶然发现有一个框架中使用到了@PostConstruct，发现以前从未使用过，去查阅了一些资料发现配套使用的还有一个@PreDestory，从Java EE5规范开始他们都会参与到Servlet生命周期中去～，想想偶尔会在面试中问别人Servlet生命周期，发现自己还有不清楚的地方。
+定义@PostConstruct被@PostConstruct修饰的方法会在服务器加载Servlet的时候运行">
   
     <link rel="alternate" href="/atom.xml" title="叶新的博客" type="application/atom+xml">
   
@@ -59,9 +66,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-注解PostConstruct和PreDestroy" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-注解PostConstruct和PreDestroy" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/01/19/注解PostConstruct和PreDestroy/" class="article-date">
   <time datetime="2017-01-19T09:16:35.000Z" itemprop="datePublished">2017-01-19</time>
@@ -74,8 +79,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/19/注解PostConstruct和PreDestroy/">注解PostConstruct和PreDestory</a>
+    <h1 class="article-title" itemprop="name">
+      注解PostConstruct和PreDestory
     </h1>
   
 
@@ -101,55 +106,19 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/01/17/hello-world/" class="article-date">
-  <time datetime="2017-01-17T09:57:49.000Z" itemprop="datePublished">2017-01-17</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/17/hello-world/">Hello World</a>
-    </h1>
+    <a href="/2017/01/17/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yexin.info/2017/01/17/hello-world/" data-id="ciy485c4c0000neutznacjv1r" class="article-share-link">Partager</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-  
 
 </section>
         
