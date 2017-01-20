@@ -5,19 +5,19 @@
   
   <title>注解PostConstruct和PreDestory | 叶新的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="今天偶然发现有一个框架中使用到了@PostConstruct，发现以前从未使用过，去查阅了一些资料发现配套使用的还有一个@PreDestory，从Java EE5规范开始他们都会参与到Servlet生命周期中去～，想想偶尔会在面试中问别人Servlet生命周期，发现自己还有不清楚的地方。
-定义@PostConstruct被@PostConstruct修饰的方法会在服务器加载Servlet的时候运行">
+  <meta name="description" content="今天偶然发现有一个框架中使用到了@PostConstruct，发现以前从未使用过，去查阅了一些资料发现配套使用的还有一个@PreDestory，从Java EE5规范开始他们都会参与到Servlet生命周期中去～，想想偶尔会在面试中问别人Servlet生命周期，发现自己还有不清楚的地方。该标签同样适用于Spring bean,这里仅以Servlet为示例。
+定义@PostConstruct被@Po">
 <meta property="og:type" content="article">
 <meta property="og:title" content="注解PostConstruct和PreDestory">
 <meta property="og:url" content="http://yexin.info/2017/01/19/注解PostConstruct和PreDestroy/index.html">
 <meta property="og:site_name" content="叶新的博客">
-<meta property="og:description" content="今天偶然发现有一个框架中使用到了@PostConstruct，发现以前从未使用过，去查阅了一些资料发现配套使用的还有一个@PreDestory，从Java EE5规范开始他们都会参与到Servlet生命周期中去～，想想偶尔会在面试中问别人Servlet生命周期，发现自己还有不清楚的地方。
-定义@PostConstruct被@PostConstruct修饰的方法会在服务器加载Servlet的时候运行">
-<meta property="og:updated_time" content="2017-01-19T10:26:44.000Z">
+<meta property="og:description" content="今天偶然发现有一个框架中使用到了@PostConstruct，发现以前从未使用过，去查阅了一些资料发现配套使用的还有一个@PreDestory，从Java EE5规范开始他们都会参与到Servlet生命周期中去～，想想偶尔会在面试中问别人Servlet生命周期，发现自己还有不清楚的地方。该标签同样适用于Spring bean,这里仅以Servlet为示例。
+定义@PostConstruct被@Po">
+<meta property="og:updated_time" content="2017-01-20T01:40:35.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="注解PostConstruct和PreDestory">
-<meta name="twitter:description" content="今天偶然发现有一个框架中使用到了@PostConstruct，发现以前从未使用过，去查阅了一些资料发现配套使用的还有一个@PreDestory，从Java EE5规范开始他们都会参与到Servlet生命周期中去～，想想偶尔会在面试中问别人Servlet生命周期，发现自己还有不清楚的地方。
-定义@PostConstruct被@PostConstruct修饰的方法会在服务器加载Servlet的时候运行">
+<meta name="twitter:description" content="今天偶然发现有一个框架中使用到了@PostConstruct，发现以前从未使用过，去查阅了一些资料发现配套使用的还有一个@PreDestory，从Java EE5规范开始他们都会参与到Servlet生命周期中去～，想想偶尔会在面试中问别人Servlet生命周期，发现自己还有不清楚的地方。该标签同样适用于Spring bean,这里仅以Servlet为示例。
+定义@PostConstruct被@Po">
   
     <link rel="alternate" href="/atom.xml" title="叶新的博客" type="application/atom+xml">
   
@@ -55,9 +55,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yexin.info"></form>
@@ -88,7 +88,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>今天偶然发现有一个框架中使用到了@PostConstruct，发现以前从未使用过，去查阅了一些资料发现配套使用的还有一个@PreDestory，从Java EE5规范开始他们都会参与到Servlet生命周期中去～，想想偶尔会在面试中问别人Servlet生命周期，发现自己还有不清楚的地方。</p>
+        <p>今天偶然发现有一个框架中使用到了@PostConstruct，发现以前从未使用过，去查阅了一些资料发现配套使用的还有一个@PreDestory，从Java EE5规范开始他们都会参与到Servlet生命周期中去～，想想偶尔会在面试中问别人Servlet生命周期，发现自己还有不清楚的地方。<br><br>该标签同样适用于Spring bean,这里仅以Servlet为示例。</p>
 <h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><h3 id="PostConstruct"><a href="#PostConstruct" class="headerlink" title="@PostConstruct"></a>@PostConstruct</h3><p>被@PostConstruct修饰的方法会在服务器加载Servlet的时候运行，并且只会被服务器调用一次，类似于Serclet的inti()方法。被@PostConstruct修饰的方法会在构造函数之后，init()方法之前运行。</p>
 <h3 id="PreDestory"><a href="#PreDestory" class="headerlink" title="@PreDestory"></a>@PreDestory</h3><p>被@PreDestory修饰的方法会在服务器卸载Servlet的时候运行，并且只会被服务器调用一次，类似于Servlet的destroy()方法。被@PreDestory修饰的方法会在destroy()方法之前运行，在Servlet被彻底卸载之前。</p>
 <h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>配置web.xml加入如下配置</p>
@@ -100,7 +100,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yexin.info/2017/01/19/注解PostConstruct和PreDestroy/" data-id="ciy48eq6k000071utunwpeycu" class="article-share-link">Partager</a>
+      <a data-url="http://yexin.info/2017/01/19/注解PostConstruct和PreDestroy/" data-id="ciy48eq6k000071utunwpeycu" class="article-share-link">Share</a>
       
       
     </footer>
@@ -111,7 +111,7 @@
   
   
     <a href="/2017/01/17/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Ancien</strong>
+      <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title">Hello World</div>
     </a>
   
@@ -144,7 +144,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         
@@ -169,7 +169,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 yexin<br>
-      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
